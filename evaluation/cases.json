@@ -1,0 +1,122 @@
+[
+  {
+    "id": "assignment_basic",
+    "assignment": true,
+    "text": "dvije margarite i jednu colu",
+    "expected": {"items": [{"id": "margarita", "quantity": 2}, {"id": "coca_cola", "quantity": 1}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "assignment_croatian_name",
+    "assignment": true,
+    "text": "jednu kapričozu i dva piva molim",
+    "expected": {"items": [{"id": "capricciosa", "quantity": 1}, {"id": "pivo", "quantity": 2}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "assignment_unavailable",
+    "assignment": true,
+    "text": "dva hamburgera i jednu margaritu",
+    "expected": {"items": [{"id": "margarita", "quantity": 1}], "unavailable": [{"text_any_of": ["hamburger", "hamburgera", "hamburgeri"], "quantity": 2}], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "assignment_meat_free",
+    "assignment": true,
+    "text": "imate li nešto bez mesa za nas dvoje?",
+    "expected": {"items": [], "unavailable": [], "suggestions": ["margarita", "vegetariana", "quattro_formaggi", "mijesana_salata"], "clarification": false}
+  },
+  {
+    "id": "assignment_correction",
+    "assignment": true,
+    "text": "tri margarite i colu, ma ne, ipak dvije margarite",
+    "expected": {"items": [{"id": "margarita", "quantity": 2}, {"id": "coca_cola", "quantity": 1}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "unavailable_brand",
+    "assignment": false,
+    "text": "jedan Pepsi i jednu margaritu",
+    "expected": {"items": [{"id": "margarita", "quantity": 1}], "unavailable": [{"text_any_of": ["Pepsi", "jedan Pepsi"], "quantity": 1}], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "only_unavailable",
+    "assignment": false,
+    "text": "dva kebaba, molim",
+    "expected": {"items": [], "unavailable": [{"text_any_of": ["kebab", "kebaba", "kebabi"], "quantity": 2}], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "without_diacritics",
+    "assignment": false,
+    "text": "jednu mijesanu salatu i jednu kapricozu",
+    "expected": {"items": [{"id": "mijesana_salata", "quantity": 1}, {"id": "capricciosa", "quantity": 1}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "minor_spelling_error",
+    "assignment": false,
+    "text": "jednu margaritu i mineralnu vodu molim vas, margaritta je za mene",
+    "expected": {"items": [{"id": "margarita", "quantity": 1}, {"id": "mineralna_voda", "quantity": 1}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "implicit_quantities",
+    "assignment": false,
+    "text": "colu, pivo i cezar salatu s piletinom",
+    "expected": {"items": [{"id": "coca_cola", "quantity": 1}, {"id": "pivo", "quantity": 1}, {"id": "cezar_salata", "quantity": 1}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "repeated_additions",
+    "assignment": false,
+    "text": "dvije margarite i još jednu margaritu",
+    "expected": {"items": [{"id": "margarita", "quantity": 3}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "change_quantity",
+    "assignment": false,
+    "text": "dva piva, ipak tri piva, i jednu diavolu",
+    "expected": {"items": [{"id": "pivo", "quantity": 3}, {"id": "diavola", "quantity": 1}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "cancel_item",
+    "assignment": false,
+    "text": "jednu margaritu i dva piva, ipak bez piva",
+    "expected": {"items": [{"id": "margarita", "quantity": 1}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "replace_item",
+    "assignment": false,
+    "text": "jednu diavolu, zapravo umjesto diavole jednu vegetarianu",
+    "expected": {"items": [{"id": "vegetariana", "quantity": 1}], "unavailable": [], "suggestions": [], "clarification": false}
+  },
+  {
+    "id": "meat_free_inquiry",
+    "assignment": false,
+    "text": "Koja jela bez mesa nudite?",
+    "expected": {"items": [], "unavailable": [], "suggestions": ["margarita", "vegetariana", "quattro_formaggi", "mijesana_salata"], "clarification": false}
+  },
+  {
+    "id": "order_and_meat_free_inquiry",
+    "assignment": false,
+    "text": "jedno pivo za mene, a koja jela imate bez mesa?",
+    "expected": {"items": [{"id": "pivo", "quantity": 1}], "unavailable": [], "suggestions": ["margarita", "vegetariana", "quattro_formaggi", "mijesana_salata"], "clarification": false}
+  },
+  {
+    "id": "ambiguous_pizza",
+    "assignment": false,
+    "text": "jednu pizzu",
+    "expected": {"items": [], "unavailable": [], "suggestions": [], "clarification": true}
+  },
+  {
+    "id": "partial_ambiguous_order",
+    "assignment": false,
+    "text": "dvije cole i jednu pizzu",
+    "expected": {"items": [{"id": "coca_cola", "quantity": 2}], "unavailable": [], "suggestions": [], "clarification": true}
+  },
+  {
+    "id": "unrelated_text",
+    "assignment": false,
+    "text": "Kakvo će sutra biti vrijeme?",
+    "expected": {"items": [], "unavailable": [], "suggestions": [], "clarification": true}
+  },
+  {
+    "id": "numeric_quantities",
+    "assignment": false,
+    "text": "2 pizze quattro formaggi i 3 mineralne vode",
+    "expected": {"items": [{"id": "quattro_formaggi", "quantity": 2}, {"id": "mineralna_voda", "quantity": 3}], "unavailable": [], "suggestions": [], "clarification": false}
+  }
+]
